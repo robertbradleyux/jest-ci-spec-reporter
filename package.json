@@ -1,0 +1,39 @@
+{
+  "name": "jest-ci-spec-reporter",
+  "description": "Zero dependency Jest spec reporter with CI-friendly output",
+  "author": {
+    "name": "Robert Bradley"
+  },
+  "license": "MIT",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "keywords": [
+    "jest",
+    "spec",
+    "reporter"
+  ],
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "lint": "eslint src/**/*.ts",
+    "test": "jest",
+    "precommit": "npm run lint && npm run test --bail"
+  },
+  "homepage": "https://github.com/robertbradleyux/jest-ci-spec-reporter#readme",
+  "bugs": {
+    "url": "https://github.com/robertbradleyux/jest-ci-spec-reporter/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robertbradleyux/jest-ci-spec-reporter.git"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.55.0",
+    "@typescript-eslint/parser": "^5.55.0",
+    "eslint": "^8.36.0",
+    "jest": "^29.5.0",
+    "rimraf": "^4.4.0",
+    "ts-node": "^10.9.1",
+    "ts-jest": "^29.0.5",
+    "typescript": "^4.9.5"
+  }
+}
