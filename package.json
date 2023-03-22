@@ -1,6 +1,6 @@
 {
   "name": "jest-ci-spec-reporter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Zero dependency Jest spec reporter with CI-friendly output",
   "author": {
     "name": "Robert Bradley"
