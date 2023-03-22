@@ -1,11 +1,14 @@
 {
   "name": "jest-ci-spec-reporter",
+  "version": "1.0.0",
   "description": "Zero dependency Jest spec reporter with CI-friendly output",
   "author": {
     "name": "Robert Bradley"
   },
   "license": "MIT",
-  "version": "1.0.0",
+  "files": [
+    "dist"
+  ],
   "main": "./dist/index.js",
   "keywords": [
     "jest",
