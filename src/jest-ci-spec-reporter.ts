@@ -59,6 +59,8 @@ export default class JestCiSpecReporter implements Reporter {
                 return '\x1b[1m\x1b[32m[PASS]\x1b[0m';
             case 'pending':
                 return '\x1b[1m\x1b[33m[SKIP]\x1b[0m';
+            case 'todo':
+                return '\x1b[1m\x1b[34m[TODO]\x1b[0m';
             case 'failed':
             default:
                 return '\x1b[1m\x1b[31m[FAIL]\x1b[0m';
