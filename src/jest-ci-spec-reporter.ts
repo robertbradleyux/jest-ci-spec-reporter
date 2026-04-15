@@ -49,7 +49,7 @@ export default class JestCiSpecReporter implements Reporter {
         return `${seconds} secs`;
     }
 
-    private _getTestDuration(duration?: number): string {
+    private _getTestDuration(duration?: number | null): string {
         return `\x1b[1m\x1b[30m(${duration ?? 0}ms)\x1b[0m`;
     }
 

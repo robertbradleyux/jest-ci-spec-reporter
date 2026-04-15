@@ -17,7 +17,7 @@ describe('JestCiSpecReporter', () => {
         numTotalTests: 34,
         numTotalTestSuites: 5,
         openHandles: [],
-        snapshot: undefined,
+        snapshot: {} as AggregatedResult['snapshot'],
         startTime: new Date().getTime(),
         success: false,
         testResults: [],
@@ -57,43 +57,14 @@ describe('JestCiSpecReporter', () => {
     });
 
     it('should implement onTestResult', () => {
-        const fakeTest: Test = {
-            context: {
-                config: undefined,
-                hasteFS: undefined,
-                moduleMap: undefined,
-                resolver: undefined
-            },
-            path: ''
-        };
-        const fakeAssertionResult: AssertionResult = {
-            title: 'TEST_NAME',
-            duration: 0,
-            status: 'failed',
-            ancestorTitles: [
-                'COMPONENT_NAME',
-                'FEATURE_NAME'
-            ],
-            failureDetails: [],
-            failureMessages: [],
-            fullName: '',
-            numPassingAsserts: 0
-        };
-        const fakeTestResult: TestResult = {
-            leaks: false,
-            numFailingTests: 0,
-            numPassingTests: 0,
-            numPendingTests: 0,
-            numTodoTests: 0,
-            openHandles: [],
-            perfStats: undefined,
-            skipped: false,
-            snapshot: undefined,
-            testFilePath: '',
-            testResults: [
-                fakeAssertionResult
-            ]
-        };
+        // prepare mocks
+        const fakeAssertionResult: AssertionResult = {} as AssertionResult;
+        const fakeTestResult: TestResult = {} as TestResult;
+        const fakeTest: Test = {} as Test;
+        fakeAssertionResult.ancestorTitles = ['COMPONENT_NAME', 'FEATURE_NAME'];
+        fakeTestResult.testResults = [ fakeAssertionResult ];
+        fakeTest.context = {} as Test['context']
+        // run tests
         const breadcrumbs = `${fakeAssertionResult.ancestorTitles.join(' > ')} >`;
         expect(reporter.onTestResult).toBeDefined();
         reporter.onTestResult(fakeTest, fakeTestResult);
