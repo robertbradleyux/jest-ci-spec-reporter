@@ -1,4 +1,4 @@
-﻿module.exports = {
+﻿export default {
     displayName: 'jest-ci-spec-reporter',
     reporters: ['<rootDir>/dist/index.js'],
     transform: {
